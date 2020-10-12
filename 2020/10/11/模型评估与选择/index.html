@@ -5,16 +5,19 @@
   
 
   
-  <title>Leo Blog</title>
+  <title>模型评估与选择 | Leo Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Leo personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Leo Blog">
-<meta property="og:url" content="https://leo-lulei.github.io/index.html">
+  <meta name="description" content="Description模型在训练集上的误差叫做训练误差，在新样本上的误差叫做泛化误差。通常，可以通过很多的方法使得模型在训练集上取得很好的效果，也就是说将训练误差控制在很小的范围里。但是带来的一个问题是这样的模型往往在新样本上的误差较大。原因是训练集中，并非普遍的模式也被当作普遍的规律，也就是所谓的过拟合。训练不足也会导致模型泛化效果不好，但是这种情况发生的较少。 在做模型选择（model sel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模型评估与选择">
+<meta property="og:url" content="https://leo-lulei.github.io/2020/10/11/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/index.html">
 <meta property="og:site_name" content="Leo Blog">
-<meta property="og:description" content="Leo personal blog">
+<meta property="og:description" content="Description模型在训练集上的误差叫做训练误差，在新样本上的误差叫做泛化误差。通常，可以通过很多的方法使得模型在训练集上取得很好的效果，也就是说将训练误差控制在很小的范围里。但是带来的一个问题是这样的模型往往在新样本上的误差较大。原因是训练集中，并非普遍的模式也被当作普遍的规律，也就是所谓的过拟合。训练不足也会导致模型泛化效果不好，但是这种情况发生的较少。 在做模型选择（model sel">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-11T13:32:54.000Z">
+<meta property="article:modified_time" content="2020-10-12T14:52:41.906Z">
 <meta property="article:author" content="leilu">
+<meta property="article:tag" content="machine learning, model training, estimation">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Leo Blog" type="application/atom+xml">
@@ -64,9 +67,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-模型评估与选择" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-模型评估与选择" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/10/11/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" class="article-date">
   <time datetime="2020-10-11T13:32:54.000Z" itemprop="datePublished">2020-10-11</time>
@@ -79,8 +80,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/11/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/">模型评估与选择</a>
+    <h1 class="article-title" itemprop="name">
+      模型评估与选择
     </h1>
   
 
@@ -112,113 +113,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-machine-learning-structure" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/10/machine-learning-structure/" class="article-date">
-  <time datetime="2020-10-10T14:06:55.000Z" itemprop="datePublished">2020-10-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/10/machine-learning-structure/">machine learning structure</a>
-    </h1>
+    <a href="/2020/10/10/machine-learning-structure/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">machine learning structure</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>这里是用来梳理一下整个机器学习的大纲，先将所有的知识点串起来，再向深处挖掘。</p>
-<p>机器学习从过程上来将，主要分为数据准备，模型训练以及模型的使用。</p>
-<ul>
-<li>数据准备阶段主要有数据的预处理，feature enginering相关的一些内容，domain knowledge的利用。</li>
-<li>数据的训练阶段主要是选定相应的模型，这里可能会用到不同的算法，也就涉及到非常多的内容，可以把用到的进行归类总结。在这里还有一个很重要的东西就是模型的评估，主要包含如何做模型的评估，以及用哪些指标来衡量模型的好坏，如何理解这些指标。</li>
-<li>模型的使用，主要包含了模型的保存，模型的部署和调用。这里主要侧重于AWS的SageMaker服务。</li>
-</ul>
-<p>接下来要重点研究的会有以下一些内容，后面会不停的做补充：</p>
-<ul>
-<li>模型评估方法和模型评估指标以及含义</li>
-<li>feature engineering，重点是如何选定feature</li>
-<li>模型的自动训练和部署（AWS SageMaker）</li>
-<li>图像识别的一些内容</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://leo-lulei.github.io/2020/10/10/machine-learning-structure/" data-id="ckg6nqql30002f4d5bbmr7vyg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning-summary/" rel="tag">machine-learning, summary</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-Spark-Learning" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/20/Spark-Learning/" class="article-date">
-  <time datetime="2020-04-20T13:36:40.000Z" itemprop="datePublished">2020-04-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/20/Spark-Learning/">Spark Core</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="spark基本流程"><a href="#spark基本流程" class="headerlink" title="spark基本流程"></a>spark基本流程</h2><p><img src="Spark-Learning/spark-workflow.JPG" alt="spark运行基本流程图"></p>
-<hr>
-<ul>
-<li>一个spark应用被提交。Driver会创建一个SparkContex对象，SparkContext对象向资源管理器(cluster Manager)通信并申请资源。</li>
-<li>cluster Manager为Executor分配资源，并启动Executor进程，Executor会发送心跳给cluster manager。</li>
-<li>SparkContext会根据RDD的依赖关系构建DAG图。<strong>DAG图提交给DAG调度器进行解析，将DAG分解为多个阶段(Stage，每个阶段是一个任务集),分解的依据是RDD之间的依赖是宽依赖还是窄依赖。</strong>并且把一个个任务集提交给底层的任务调度器(TaskScheduler)进行处理。Executor向SparkContext申请任务，TaskScheduler将任务分发给Executor运行。同时，SparkContext会将应用的代码发放给Executor。</li>
-<li>Task在Executor上执行，把执行结果返回给TaskScheduler，再反馈给DAG Scheduler，运行完毕后写入数据并释放所有资源。</li>
-</ul>
-<h2 id="spark-RDD"><a href="#spark-RDD" class="headerlink" title="spark RDD"></a>spark RDD</h2><p>Spark采用RDD能实现高效计算主要是有以下三个原因。</p>
-<ol>
-<li>高效的容错性。RDD设计为只读，不可修改，想要修改只能从父RDD转换到子RDD，这样不同的RDD之间就建立的很清晰的关系，这样哪怕是有些分区的数据丢失，可以通过重新计算的方式来实现容错，无需回滚。RDD的转换操作都是一些粗粒度的操作(map,filter and join)，这样就不需要记录具体的数据和各种细粒度的操作，这样就大大降低了容错开销。</li>
-<li>中间结果持久化到内存。部分RDD之间的结果不需要落地，受BlockerManager管理。</li>
-<li>存放的数据可以是Java对象，这样就避免了不必要的对象序列化和反序列化的开销。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://leo-lulei.github.io/2020/04/20/Spark-Learning/" data-id="ckg6nqql70005f4d5coemc81m" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
