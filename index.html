@@ -99,7 +99,20 @@
 <p>将整个数据集分为K个互斥子集的这个过程也可以重复进行，这样划分出来的子集也就不一样。对这样的划分过程进行p次。连起来就叫做p次K者交叉验证。</p>
 <h3 id="bootstrap"><a href="#bootstrap" class="headerlink" title="bootstrap"></a>bootstrap</h3><p>适用于数据集比较小。<br>数据集D包含m个样本。每次从里面拿出一个拷贝到D’中，放回。这样的操作进行m次，得到大小为m的D’。那么D中样本始终没有被取到的概率是（1-1/m）^m。它的概率趋向于0.368。这样可以把D-D’作为测试集，把D’作为训练集。<br>在数据量足够的情况下，LOO和cross-validation更具有优势。</p>
 <h2 id="性能度量"><a href="#性能度量" class="headerlink" title="性能度量"></a>性能度量</h2><p>性能度量就是指通过什么样的指标来评价模型的优劣。通常回归模型可以用mean squared error来衡量。分类问题就涉及到准确率等一系列可能关心的指标。</p>
-<h3 id="Accuracy-Recall-and-F1"><a href="#Accuracy-Recall-and-F1" class="headerlink" title="Accuracy Recall and F1"></a>Accuracy Recall and F1</h3><p>Accuracy = TP/(TP+FP)<br>Recall = TP/(TP+FN)<br>Accuracy衡量的是所有为判定为正样本中，判断正确的所占比例。该指标表示的是判断的准确性。<br>Recall表示的是所有判定正确正样本占所有正样本的的概率。该指标衡量有多少漏掉了。<br>F1 = 2<em>P</em>R/（P+R）= 2*TP/（样本总数+TP-TN）<br>是结合了Accuracy和Recall的一个新指标。可以对不同问题对Accuracy和Recall的要求不同做综合评价。</p>
+<h3 id="Accuracy-Recall-and-F1"><a href="#Accuracy-Recall-and-F1" class="headerlink" title="Accuracy, Recall and F1"></a>Accuracy, Recall and F1</h3><p><strong>解释Positive和negative：</strong></p>
+<ul>
+<li>positive指的是预测的结果为正样例，反正为negative</li>
+<li>True和False指的是该预测结果和实际情况是否一致。</li>
+</ul>
+<p>Accuracy = TP/(TP+FP)<br>Recall = TP/(TP+FN)<br>Accuracy衡量的是所有为判定为正样本中，判断正确的所占比例。该指标表示的是判断的准确性。  </p>
+<p>Recall表示的是所有判定正确正样本占所有正样本的的概率。该指标衡量有多少漏掉了。<br>F1 = 2<em>P</em>R/（P+R）= 2*TP/（样本总数+TP-TN）</p>
+<p>是结合了Accuracy和Recall的一个新指标。可以对不同问题对Accuracy和Recall的要求不同做综合评价。</p>
+<h3 id="ROC-and-AUC"><a href="#ROC-and-AUC" class="headerlink" title="ROC and AUC"></a>ROC and AUC</h3><p>ROC(Receiver operationg characteristic)</p>
+<p><strong>横轴表示真正例率（True Positive Rate），纵轴表示假正例率(False Positive Rate)。</strong>  </p>
+<p><strong><em>TPR = TP/(TP + FN)</em></strong><br><strong><em>FPR = FP/(TN + FP)</em></strong></p>
+<p>由此可见， TPR的分子预测正确的正样例，分母为所有正样例的个数。FPR分子为错误预测为正样例的个数，分母为所有负样例的个数。</p>
+<p>在实际作图的时候，会按照预测结果对样例进行排序，先把阈值设到最大，这样的话所有的样例都会被分类为负样例。此时TP和FP都为0（没有一个被预测为正样例）。然后按照顺序依次将每个样例设为正样例，计算TPR和FPR。这样就可以得到ROC图。</p>
+<p>有了ROC图如何进行衡量呢，从ROC的定义我们知道，ROC曲线与X轴形成的面积越大，则该分类器的效果越好。由此定义AUC（Area Under ROC Curve）。<br>AUC的值越接近1则该分类器的分类效果越好。</p>
 
       
     </div>
